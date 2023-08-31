@@ -12,25 +12,22 @@ datasource db {
 
 model Product {
    id              Int      @id @default(autoincrement())
+   name            String
    image_url       String
+   type            String
    price           Float
    seller          String
    sport           String
-   available_sizes String[]
    details         String
    createdAt       DateTime @default(now())
    updatedAt       DateTime @updatedAt()
-   Size            Size[]
+   available_sizes Size[]
 
    @@map("products")
 }
 
 model Size {
    id              Int      @id @default(autoincrement())
-   name            String
-   email           String   @unique
-   telephone       Int
-   address         String
    createdAt       DateTime @default(now())
    updatedAt       DateTime @updatedAt
    available_sizes Product  @relation(fields: [productId], references: [id])
