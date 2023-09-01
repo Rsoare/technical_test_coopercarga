@@ -7,8 +7,8 @@ async function bootstrap() {
    const app = await NestFactory.create(AppModule, { cors: true });
 
    const config = new DocumentBuilder()
-      .setTitle('List contact API')
-      .setDescription('Project Full Stack M6-S2')
+      .setTitle('List Products API')
+      .setDescription('Teste Tecnico Coopercarga')
       .setVersion('1.0')
       .addBearerAuth()
       .build();
