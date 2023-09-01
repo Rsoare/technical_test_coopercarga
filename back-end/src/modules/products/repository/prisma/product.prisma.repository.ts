@@ -18,19 +18,40 @@ export class ProductPrismaRepository implements ProductRepository {
       });
 
       const newProduct = await this.prisma.product.create({
-         data: { ...product },
+         data: {
+            ...product,
+            sizes: {
+               create: data.sizes?.map((size) => ({ size })) || [],
+            },
+         },
+         include: {
+            sizes: true,
+         },
       });
 
-      return plainToInstance(Product, newProduct);
+      const sizeArray = newProduct.sizes.map((size) => size.size);
+
+      const response = Object.assign({}, newProduct, { sizes: sizeArray });
+
+      return plainToInstance(Product, response);
    }
 
    async findAll(): Promise<Product[]> {
-      const product: Product[] = await this.prisma.product.findMany({
+      const products = await this.prisma.product.findMany({
          include: {
-            available_sizes: true,
+            sizes: true,
          },
       });
-      return plainToInstance(Product, product);
+
+      const newProducts = products.map((product) => {
+         const sizeArray = product.sizes.map((size) => size.size);
+
+         const response = Object.assign({}, product, { sizes: sizeArray });
+
+         return response;
+      });
+
+      return plainToInstance(Product, newProducts);
    }
 
    async findOne(productId: string): Promise<Product> {
@@ -39,11 +60,15 @@ export class ProductPrismaRepository implements ProductRepository {
       const product = await this.prisma.product.findUnique({
          where: { id },
          include: {
-            available_sizes: true,
+            sizes: true,
          },
       });
 
-      return plainToInstance(Product, product);
+      const sizeArray = product.sizes.map((size) => size.size);
+
+      const response = Object.assign({}, product, { sizes: sizeArray });
+
+      return plainToInstance(Product, response);
    }
 
    async update(productId: string, data: UpdateProductDto): Promise<Product> {
@@ -51,10 +76,22 @@ export class ProductPrismaRepository implements ProductRepository {
 
       const product = await this.prisma.product.update({
          where: { id },
-         data: { ...data },
+         data: {
+            ...data,
+            sizes: {
+               create: data.sizes?.map((size) => ({ size })) || [],
+            },
+         },
+         include: {
+            sizes: true,
+         },
       });
 
-      return plainToInstance(Product, product);
+      const sizeArray = product.sizes.map((size) => size.size);
+
+      const response = Object.assign({}, product, { sizes: sizeArray });
+
+      return plainToInstance(Product, response);
    }
 
    async delete(productId: string): Promise<void> {

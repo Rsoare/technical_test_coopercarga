@@ -1,5 +1,12 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsArray, IsDecimal, IsString, ValidateNested } from 'class-validator';
+import {
+   IsArray,
+   IsDecimal,
+   IsNumber,
+   IsOptional,
+   IsString,
+   ValidateNested,
+} from 'class-validator';
 
 export class CreateProductDto {
    @IsString()
@@ -26,7 +33,7 @@ export class CreateProductDto {
    })
    type: string;
 
-   @IsDecimal()
+   @IsNumber()
    @ApiProperty({
       description: 'Preço do produto',
       default: 349.99,
@@ -57,4 +64,8 @@ export class CreateProductDto {
       type: String,
    })
    details: string;
+
+   @IsArray()
+   @IsOptional()
+   sizes: string[];
 }
