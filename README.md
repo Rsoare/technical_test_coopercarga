@@ -60,7 +60,7 @@
 
 ## 6. Faça uma query em SQL que traga em cada linha o nome de jogadores que se enfrentaram mais de duas vezes, onde em cada partida a soma dos pontos foi maior que 30 e a duração do jogo foi maior que 90 minutos. Não podem haver resultados repetidos.
 
-- O codigo da query e encontra no arquivou "schema.sql"
+- O código refatorado encontra-se no arquivo "schema.sql"
 
 ## 7. Dado o array no arquivo data.json, crie um interface em React.js, CSS e Bootstrap mostre os itens como se fosse um marketplace de roupas.
 
