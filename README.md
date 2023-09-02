@@ -65,6 +65,8 @@
 ## 7. Dado o array no arquivo data.json, crie um interface em React.js, CSS e Bootstrap mostre os itens como se fosse um marketplace de roupas.
 
 - O projeto foi dividido em duas pastas: Front-end e Back-end.
+- O projeto front-end consiste em um marketplace de roupas feito com React.js.
+- O projeto back-end consiste em um CRUD de uma API feita com Nest.js + Prisma, utilizando como base os dados enviados no arquivo data.json.
 
 ### Projeto Front-End
 - Todas as informações sobre o projeto estão no README do projeto.
