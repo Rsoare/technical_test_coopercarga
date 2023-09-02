@@ -9,6 +9,8 @@ class DoSomething {
       this.multiplePrime = Array(this.maxOrder + 1).fill(0);
       this.indexPrime = 2
       this.testPrimeNumber = 1
+      this.rowPerPage = 50;
+      this.quantityColumns = 4;
    }
 
    searchPrimeNumbers() {
@@ -50,25 +52,31 @@ class DoSomething {
    printNumbersPrime() {
       let pageOfSet = 1;
       let currentPage = 0;
-      const rowPerPage = 50;
-      const quantityColumns = 4;
 
       while (pageOfSet <= this.numberMax) {
          console.log("Page ", currentPage);
-         for (let rowOfSet = pageOfSet; rowOfSet <= pageOfSet + rowPerPage - 1; rowOfSet++) {
-            let aux = [];
-            for (let i = 0; i < quantityColumns; i++) {
-               const index = rowOfSet + i * rowPerPage;
-               if (index <= this.numberMax) {
-                  aux.push(this.arryPrimeNumber[index]);
-               }
-            }
-            console.log(aux.join('|'));
+         for (let rowOfSet = pageOfSet; rowOfSet <= pageOfSet + this.rowPerPage - 1; rowOfSet++) {
+
+            this.calcIndex(rowOfSet)
          }
          currentPage++;
-         pageOfSet += rowPerPage * quantityColumns;
+         pageOfSet += this.rowPerPage * this.quantityColumns;
       }
    }
+
+   calcIndex(rowOfSet) {
+      let aux = [];
+
+      for (let i = 0; i < this.quantityColumns; i++) {
+         const index = rowOfSet + i * this.rowPerPage;
+         if (index <= this.numberMax) {
+            aux.push(this.arryPrimeNumber[index]);
+         }
+      }
+
+      console.log(aux.join('|'));
+   }
+
 
    generatePrimeNumbers() {
       this.searchPrimeNumbers();
