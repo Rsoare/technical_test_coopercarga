@@ -67,7 +67,7 @@ class DoSomething {
       }
    }
    
-   // Metodo responsável por calcular o index  e imprimir números primos em uma linha da grade
+   // Metodo responsável por calcular o index  e imprimir números primos em uma linha da pagina
    calcIndex(rowOfSet) {
       let aux = [];
    
