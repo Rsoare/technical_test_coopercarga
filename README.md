@@ -16,7 +16,7 @@
 
 ## 3. Refatore o código do arquivo utilizando conceitos de Clean Code, de maneira que o código se torne mais limpo, legível e de fácil manutenção.
 
-- O codigo refatorados e encontra no arquivou "main_refactored.js"
+- O código refatorado encontra-se no arquivo "main_refactored.js"
 
 ## 4. Explique como o conceito de middlewares no Express.js pode ser utilizado para evitar repetição de código.
 
