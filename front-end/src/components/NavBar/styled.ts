@@ -6,4 +6,8 @@ export const UlStyled = styled.div`
    gap: 4rem;
    justify-content: center;
    width: 100%;
+
+   li {
+      cursor: pointer;
+   }
 `;

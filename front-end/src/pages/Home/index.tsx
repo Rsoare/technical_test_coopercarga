@@ -5,9 +5,10 @@ import { ProductContext } from "../../contexts/products";
 import CardProduct from "../../components/Card";
 import { Container } from "react-bootstrap";
 import { UlStyled } from "./styled";
+import SkeletonCard from "../../components/skeletonCard";
 
 const HomePage = () => {
-   const { products, getProducts } = useContext(ProductContext);
+   const { searchProducts, getProducts } = useContext(ProductContext);
 
    useEffect(() => {
       getProducts();
@@ -21,9 +22,17 @@ const HomePage = () => {
             <Container>
                <section>
                   <UlStyled>
-                     {products.map((product) => (
-                        <CardProduct key={product.id} product={product} />
-                     ))}
+                     {searchProducts.length !== 0 ? (
+                        searchProducts.map((product) => (
+                           <CardProduct key={product.id} product={product} />
+                        ))
+                     ) : (
+                        <>
+                           <SkeletonCard />
+                           <SkeletonCard />
+                           <SkeletonCard />
+                        </>
+                     )}
                   </UlStyled>
                </section>
             </Container>

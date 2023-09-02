@@ -9,6 +9,8 @@ export const ProductContext = createContext({} as iProductContext);
 export const ProductProvide = ({ children }: iDefaultProviderProps) => {
    const [products, setProduct] = useState<iProduct[]>([]);
 
+   const [search, setSearch] = useState("");
+
    const getProducts = async () => {
       try {
          const response: AxiosResponse<iProduct[]> = await api.get(`/products`);
@@ -19,11 +21,22 @@ export const ProductProvide = ({ children }: iDefaultProviderProps) => {
       }
    };
 
+   const searchProducts: iProduct[] = products.filter((product) =>
+      search === ""
+         ? true
+         : product.seller
+              .toLowerCase()
+              .trim()
+              .includes(search.toLowerCase().trim())
+   );
+
    return (
       <ProductContext.Provider
          value={{
             getProducts,
             products,
+            searchProducts,
+            setSearch,
          }}
       >
          {children}

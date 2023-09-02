@@ -1,30 +1,43 @@
 import { Container, Navbar } from "react-bootstrap";
 import logo from "../../assets/logo.svg";
 import { UlStyled } from "./styled";
+import { useContext } from "react";
+import { ProductContext } from "../../contexts/products";
 
 const NavBar = () => {
+   const { setSearch } = useContext(ProductContext);
+
+   const handleButtonClick = (value: string) => {
+      setSearch(value);
+   };
+
    return (
       <Navbar style={{ height: "5rem" }}>
          <Container>
             <img src={logo} alt="logo Nike" />
             <UlStyled>
                <li>
-                  <p>Nike</p>
+                  <p onClick={() => handleButtonClick("Nike")}>Nike</p>
                </li>
                <li>
-                  <p>Adidas</p>
+                  <p onClick={() => handleButtonClick("Adidas")}>Adidas</p>
                </li>
                <li>
-                  <p>Puma</p>
+                  <p onClick={() => handleButtonClick("Puma")}>Puma</p>
                </li>
                <li>
-                  <p>Jordan</p>
+                  <p onClick={() => handleButtonClick("Jordan")}>Jordan</p>
                </li>
                <li>
-                  <p>Olympikus</p>
+                  <p onClick={() => handleButtonClick("Olympikus")}>
+                     Olympikus
+                  </p>
                </li>
                <li>
-                  <p>Mizuno</p>
+                  <p onClick={() => handleButtonClick("Mizuno")}>Mizuno</p>
+               </li>
+               <li>
+                  <p onClick={() => handleButtonClick(" ")}>Todos</p>
                </li>
             </UlStyled>
          </Container>

@@ -1,6 +1,8 @@
 export interface iProductContext {
    getProducts: () => Promise<void>;
    products: iProduct[];
+   searchProducts: iProduct[];
+   setSearch: React.Dispatch<React.SetStateAction<string>>;
 }
 
 export interface iProduct {
