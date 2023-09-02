@@ -6,6 +6,7 @@ import CardProduct from "../../components/Card";
 import { Container } from "react-bootstrap";
 import { UlStyled } from "./styled";
 import SkeletonCard from "../../components/skeletonCard";
+import SearchBar from "../../components/SearchBar";
 
 const HomePage = () => {
    const { searchProducts, getProducts } = useContext(ProductContext);
@@ -18,8 +19,9 @@ const HomePage = () => {
       <>
          <Header />
          <NavBar />
+         <SearchBar />
          <main>
-            <Container>
+            <Container style={{ marginTop: "1rem" }}>
                <section>
                   <UlStyled>
                      {searchProducts.length !== 0 ? (

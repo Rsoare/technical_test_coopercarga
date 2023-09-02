@@ -21,13 +21,15 @@ export const ProductProvide = ({ children }: iDefaultProviderProps) => {
       }
    };
 
-   const searchProducts: iProduct[] = products.filter((product) =>
-      search === ""
-         ? true
-         : product.seller
-              .toLowerCase()
-              .trim()
-              .includes(search.toLowerCase().trim())
+   const searchProducts: iProduct[] = products.filter(
+      (product) =>
+         search === "" ||
+         product.seller
+            .toLowerCase()
+            .trim()
+            .includes(search.toLowerCase().trim()) ||
+         search === "" ||
+         product.name.toLowerCase().trim().includes(search.toLowerCase().trim())
    );
 
    return (
