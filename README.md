@@ -63,3 +63,16 @@
 - O codigo da query e encontra no arquivou "schema.sql"
 
 ## 7. Dado o array no arquivo data.json, crie um interface em React.js, CSS e Bootstrap mostre os itens como se fosse um marketplace de roupas.
+
+- O projeto foi dividido em duas pastas: Front-end e Back-end.
+
+### Projeto Front-End
+- Todas as informações sobre o projeto estão no README do projeto.
+
+### Projeto Back-End
+- Todas as informações sobre o projeto estão no README do projeto.
+## Contatos
+
+- Author - [Rihan Soares](https://portfolio-blue-three-14.vercel.app/#home)
+- Email - rihan145@gmail.com
+- Linkedin - [Rihan Soares](https://www.linkedin.com/in/rihansoares/)
