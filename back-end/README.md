@@ -106,3 +106,19 @@ $ npm run dev
   ```
       DATABASE_URL="postgres://Micro:123456@localhost:5432/lista_produtos" //( DATABASE_URL="postgres://<Usuario>:<Senha>@localhost:<Porta>/<Nome do db>") 
   ```
+
+## Tecnologias utilizadas 
+- Nest.js
+- Prisma
+- JavaScript
+- TypeScript
+- Node.js
+- class-transformer
+- class-validator
+- swagger
+
+## Contatos
+
+- Author - [Rihan Soares](https://portfolio-blue-three-14.vercel.app/#home)
+- Email - rihan145@gmail.com
+- Linkedin - [Rihan Soares](https://www.linkedin.com/in/rihansoares/)
