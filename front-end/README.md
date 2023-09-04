@@ -43,7 +43,9 @@
      - Ao clicar em um nome na barra de navegação, os produtos da marca selecionada serão renderizados.
 
 - Ao clicar na NavBar ou pesquisar um produto e caso nenhum produto seja encontrado, serão renderizados esqueletos dos cards.
- 
+
+- Modal de informações
+    - Ao clicar em um dos cards dos produtos um modal será aberto com mais informações do produto clicado 
 #
 
 ## Informações sobre a integração com a API.
