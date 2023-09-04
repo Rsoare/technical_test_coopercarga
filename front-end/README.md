@@ -12,7 +12,7 @@
 
 ## Acessar a aplicação na Vercel
 - Para facilitar o teste da aplicação, foi realizado o seu deploy na Vercel, eliminando assim a necessidade de inicializar a aplicação localmente.
-  - Basta accesar este link: https://front-end-rsoare.vercel.app/
+  - Basta acessar este link: https://front-end-rsoare.vercel.app/
 #
 
 ## Inicializando a aplicação localmente
